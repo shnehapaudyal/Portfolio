@@ -1,0 +1,14 @@
+.main-card-container{
+margin: 6rem;
+}
+@media screen and (max-width: 960px) {
+.main-card-container{
+margin-left: 2.5rem;
+} 
+}
+.card-container{
+display: grid;
+grid-template-columns: repeat(auto-fill,minmax(550px, 1fr));
+margin-left:1.4rem;
+margin-bottom:1.4rem;
+}

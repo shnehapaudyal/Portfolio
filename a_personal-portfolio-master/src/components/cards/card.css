@@ -1,0 +1,43 @@
+.container-card {
+background-color:rgba(37, 40, 44, 0.311);
+width:50rem;
+padding: 1rem;
+border: 1.7px solid #00bb00;
+margin-right:2rem;
+margin-bottom:4rem;
+}
+.repo-name{
+    font-size: 2.5rem;
+    color: white;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.repo-dis{
+    font-size: 1.4rem;
+     color:#ccd6f6;
+    font-weight: lighter;
+    margin-bottom: 2rem;
+     text-align: justify;
+     line-height: 1.9;
+}
+.work-view{
+    font-size: 1.3rem;
+    color: rgb(239, 165, 74);
+    cursor:pointer;
+    font-weight: lighter;
+}
+@media screen and (max-width: 460px) {
+.container-card{
+    width:30rem;
+}
+.repo-name{
+    font-size: 1.4rem;
+}
+.repo-dis{
+    font-size: 0.9rem;
+}
+.work-view{
+    font-size: 0.7rem;
+}
+}
+

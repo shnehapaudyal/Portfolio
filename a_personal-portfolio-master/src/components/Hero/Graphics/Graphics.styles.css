@@ -1,0 +1,24 @@
+.image-cropper {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.image {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+.container-p{
+margin-left: 15rem;
+margin-top: 4rem;
+}
+@media screen and (max-width: 960px) {
+  .container{
+margin-left: .5rem;
+margin-top: .5rem;
+}
+}

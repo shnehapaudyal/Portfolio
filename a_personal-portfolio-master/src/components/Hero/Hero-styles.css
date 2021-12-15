@@ -1,0 +1,35 @@
+.whole-container{
+display: flex;
+flex-direction: row;
+}
+.compartment{
+    width: 50%;
+    /* height: 90vh; */
+    padding: 10rem;
+}
+.slogan-container{
+    order: 1
+    /* background-color: #00bb00 */
+}
+.graphics-container{
+    order: 2;
+}
+@media screen and (max-width: 769px) {
+.whole-container{
+display: flex;
+flex-direction: column;
+}
+.compartment{
+    width: 100%;
+    /* height: 90vh; */
+    margin-top: 1rem;
+    padding: 3rem;
+}
+.slogan-container{
+    order: 2
+    /* background-color: #00bb00 */
+}
+.graphics-container{
+    order: 1;
+}
+}
