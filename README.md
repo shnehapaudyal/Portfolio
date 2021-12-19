@@ -1,3 +1,3 @@
-# Personal Protfolio
+# Personal Portfolio
 
-This project is for personal protfolio for myself
+This project is a personal porttfolio for myself
