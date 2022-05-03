@@ -2,19 +2,19 @@
     margin-top: 10rem;
 }
 .hi{
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: light;
-    color: #ccd6f6;
+    color: #2dad8c;
     padding: 0.5rem;
 }
 .name{
-    color:#ccd6f6;
+    color:#2dad8c;
     font-size: 3rem;
     font-weight: bolder;
 }
 /* //typewriter css */
 .css-typing p {
-  border-right: .15em solid #00bb00;
+  border-right: .15em solid #2dad8c;
   font-family: "Courier";
   font-size: 14px;
   white-space: nowrap;

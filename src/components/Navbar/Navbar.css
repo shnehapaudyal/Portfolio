@@ -15,8 +15,6 @@ font-size: 2rem;
 font-weight: lighter;
 }
 
-
-
 .nav-menu {
     display: grid;
     grid-template-columns: repeat(5, auto);
