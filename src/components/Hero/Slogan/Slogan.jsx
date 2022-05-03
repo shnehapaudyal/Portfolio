@@ -4,13 +4,13 @@ export default function Slogan() {
     return (
         <div class="aboutme css-typing">
             <p className="hi">
-                Hi, my name is
+            Hi, I am
             </p>
             <p className="name">
-                Niraj Budhathoki.
+             Shneha Paudyal
             </p>
             <p className="name">
-                I build things for web.
+              Software Quality Assurance Analyst
             </p>
         </div>
     )

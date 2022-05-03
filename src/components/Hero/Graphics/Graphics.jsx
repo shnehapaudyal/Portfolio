@@ -1,5 +1,5 @@
 import React from 'react'
-import Photo from '../../../Assets/photo.JPG'
+import Photo from '../../../Assets/Photo.jpg'
 import './Graphics.styles.css'
 export default function Graphics() {
     return (
