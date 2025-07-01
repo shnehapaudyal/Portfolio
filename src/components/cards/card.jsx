@@ -5,7 +5,7 @@ export default function Card(props) {
         <div className="container-card" href="www.github.com">
             <h1 className="repo-name">{props.repo.name}</h1>
             <p className="repo-dis">{props.repo.description}</p>
-            <a className="work-view" href={props.repo.html_url} target="_blank" rel="noreferrer">View Work</a>
+            <a className="work-view" href={props.repo.html_url} target="_blank" rel="noreferrer">Click to view</a>
         </div>
     )
 }

@@ -1,153 +1,44 @@
-.aboutme{
-    margin-top: 10rem;
+.aboutme {
+    margin-top: 2rem;
+    text-align: left;
 }
-.hi{
+
+.hi {
     font-size: 2.5rem;
-    font-weight: light;
-    color: #2dad8c;
+    font-weight: 300;
+    color: #bb00aa;
     padding: 0.5rem;
+    font-family: 'Courier New', monospace;
 }
-.name{
-    color:#2dad8c;
+
+.name {
+    color: #bb00aa;
     font-size: 3rem;
-    font-weight: bolder;
-}
-/* //typewriter css */
-.css-typing p {
-  border-right: .15em solid #2dad8c;
-  font-family: "Courier";
-  font-size: 14px;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.css-typing p:nth-child(1) {
-  width: 9.3em;
-  -webkit-animation: type 2s steps(40, end);
-  animation: type 2s steps(40, end);
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
+    font-weight: normal;
+    font-family: 'Courier New', monospace;
+    white-space: nowrap;
 }
 
-.css-typing p:nth-child(2) {
-  width: 11.5em;
-  font-size: 3rem;
-  opacity: 0;
-  -webkit-animation: type2 2s steps(20, end);
-  animation: type2 2s steps(40, end);
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
+.title {
+    color: #bb00aa;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    white-space: nowrap;
 
-.css-typing p:nth-child(3) {
-  width: 20.3em;
-  font-size: 3rem;
-  opacity: 0;
-  -webkit-animation: type3 5s steps(20, end), blink .5s step-end infinite alternate;
-  animation: type3 5s steps(20, end), blink .5s step-end infinite alternate;
-  -webkit-animation-delay: 4s;
-  animation-delay: 4s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
 }
+.footer {
+    color: #bb00aa;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    white-space: nowrap;
+ }
 
-@keyframes type {
-  0% {
-    width: 0;
-  }
-  99.9% {
-    border-right: .15em solid #00bb00;
-  }
-  100% {
-    border: none;
-  }
-}
-
-@-webkit-keyframes type {
-  0% {
-    width: 0;
-  }
-  99.9% {
-    border-right: .15em solid #00bb00;
-  }
-  100% {
-    border: none;
-  }
-}
-
-@keyframes type2 {
-  0% {
-    width: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  99.9% {
-    border-right: .15em solid #ccd6f6;
-  }
-  100% {
-    opacity: 1;
-    border: none;
-  }
-}
-
-@-webkit-keyframes type2 {
-  0% {
-    width: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  99.9% {
-    border-right: .15em solid #ccd6f6
-  }
-  100% {
-    opacity: 1;
-    border: none;
-  }
-}
-
-@keyframes type3 {
-  0% {
-    width: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes type3 {
-  0% {
-    width: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-@-webkit-keyframes blink {
-  50% {
-    border-color: tranparent;
-  }
-}
-@media screen and (max-width: 960px) {
-.css-typing p:nth-child(2) {
-  font-size: 2rem;
-}
-
-.css-typing p:nth-child(3) {
-  font-size: 2rem;
-}
+ .warning {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #bb00aa;
+    padding: 0.5rem;
+    font-family: 'Courier New', monospace;
 }

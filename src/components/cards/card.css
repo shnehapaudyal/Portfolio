@@ -8,13 +8,13 @@ margin-bottom:4rem;
 }
 .repo-name{
     font-size: 2.5rem;
-    color: white;
+    color: #bb00aa;
     font-weight: normal;
     text-transform: uppercase;
 }
 .repo-dis{
     font-size: 1.4rem;
-     color:#ccd6f6;
+     color:#0d3a23;
     font-weight: lighter;
     margin-bottom: 2rem;
      text-align: justify;
@@ -22,7 +22,7 @@ margin-bottom:4rem;
 }
 .work-view{
     font-size: 1.3rem;
-    color: rgb(239, 165, 74);
+    color: #0e1941;
     cursor:pointer;
     font-weight: lighter;
 }

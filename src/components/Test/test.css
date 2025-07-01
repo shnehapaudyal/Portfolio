@@ -1,0 +1,289 @@
+/* Container Styling */
+.automation-hub-container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem 1rem;
+    background: #faf7fb;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(147, 18, 110, 0.07);
+}
+
+/* Headings */
+.automation-hub-container h1 {
+    color: #93126e;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.automation-hub-container h2 {
+    color: #93126e;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.automation-hub-container ul,
+.automation-hub-container li {
+  color: #93126e; /* Dark pink/purple consistent with your theme */
+}
+
+.automation-hub-container a {
+  color: #93126e; /* Make links visible and consistent */
+}
+
+/* Section spacing */
+.automation-hub-container section {
+    margin-bottom: 3rem;
+}
+
+.automation-hub-container section:not(:last-child) {
+    border-bottom: 1px solid #e7d5e5;
+    padding-bottom: 2rem;
+}
+
+/* Search Bar */
+.search-bar {
+    display: block;
+    margin: 0 auto 2rem auto;
+    padding: 0.7rem 1.2rem;
+    border: 1px solid #bb00aa;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 400px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.search-bar:focus {
+    border: 2px solid #93126e;
+}
+
+/* Tool Buttons */
+.tool-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.password-field {
+    position: relative;
+}
+
+.password-field input {
+    padding-right: 2.5rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #93126e;
+    user-select: none;
+}
+
+.tool-buttons button {
+    background: #93126e;
+    color: #93126e;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(147, 18, 110, 0.08);
+}
+
+.tool-buttons button:hover {
+    background: #bb00aa;
+}
+
+/* Links & List */
+.automation-hub-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.automation-hub-container li {
+    margin-bottom: 0.8rem;
+}
+
+.automation-hub-container a {
+    color: #93126e;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.automation-hub-container a:hover {
+    color: #bb00aa;
+    text-decoration: underline;
+}
+
+/* Table */
+.sample-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: white;
+    color: black;
+}
+
+.sample-table th,
+.sample-table td {
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.sample-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.sample-table tr:hover {
+    background-color: #f9eaf4;
+}
+
+/* Cards */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.blog-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 12px rgba(147, 18, 110, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px rgba(147, 18, 110, 0.15);
+}
+
+.blog-card h3 {
+    margin: 0;
+    color: #93126e;
+    font-size: 1.1rem;
+}
+
+/* Form Styles */
+.resource-form input,
+.resource-form textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fff;
+    transition: border 0.2s;
+}
+
+.resource-form input:focus,
+.resource-form textarea:focus {
+    border-color: #93126e;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(147, 18, 110, 0.1);
+}
+
+.resource-form button,
+.resource-form input[type="submit"] {
+    background-color: #93126e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(147, 18, 110, 0.08);
+}
+
+.resource-form button:hover {
+    background-color: #bb00aa;
+}
+
+/* Form Messages */
+.form-error {
+    color: #c0392b;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-success {
+    color: #27ae60;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+.form-info {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+
+.blog-card {
+  flex: 1 1 calc(50% - 1rem);
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(147, 18, 110, 0.07);
+  transition: box-shadow 0.2s;
+}
+
+.tool-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.tool-buttons a button {
+  padding: 10px 14px;
+  font-size: 15px;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: grab;
+  transition: background 0.2s ease;
+}
+.tool-buttons a button:hover {
+  background-color: #e5e7eb;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .automation-hub-container {
+        padding: 1rem 0.3rem;
+    }
+    .tool-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
