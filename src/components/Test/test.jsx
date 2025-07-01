@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './test.css';
 
 const resources = [
@@ -20,24 +20,24 @@ const tutorials = [
 
 export default function TestAutomationHub() {
     const [search, setSearch] = useState('');
-    const [form, setForm] = useState({ name: '', url: '', feedback: '' });
-    const [submitted, setSubmitted] = useState(false);
+    // const [form, setForm] = useState({ name: '', url: '', feedback: '' });
+    // const [, setSubmitted] = useState(false);
     const [showPassword, setShowPassword] = useState(false); // 👁️
 
     const filteredResources = resources.filter(r =>
         r.name.toLowerCase().includes(search.toLowerCase())
     );
 
-    const handleFormChange = e => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
+    // const handleFormChange = e => {
+    //     setForm({ ...form, [e.target.name]: e.target.value });
+    // };
 
-    const handleFormSubmit = e => {
-        e.preventDefault();
-        setSubmitted(true);
-        setForm({ name: '', url: '', feedback: '' });
-        setTimeout(() => setSubmitted(false), 3000);
-    };
+    // const handleFormSubmit = e => {
+    //     e.preventDefault();
+    //     setSubmitted(true);
+    //     setForm({ name: '', url: '', feedback: '' });
+    //     setTimeout(() => setSubmitted(false), 3000);
+    // };
 
     const [regForm, setRegForm] = useState({
         username: '',
