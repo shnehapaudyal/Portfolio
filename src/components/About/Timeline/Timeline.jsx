@@ -6,7 +6,7 @@ export default function Timeline() {
             <div class="container left">
                 <div class="content">
                     <h2>2025</h2>
-                    <p>Freelancing / QA Consulatation </p>
+                    <p>Freelancing / QA Consultation </p>
                 </div>
             </div>
            
