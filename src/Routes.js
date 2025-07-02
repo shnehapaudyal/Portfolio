@@ -9,6 +9,7 @@ import Work from './components/Work/work'
 import About from './components/About/about'
 import Blog from './components/Blogs/blog'
 import Test from './components/Test/test'
+import Footer from './components/Footer/footer'
 
 export default (
     <Router history={createBrowserHistory()} >
@@ -20,6 +21,8 @@ export default (
         <Route path="/blog" exact render={(props) => <Blog {...props} />} />
         <Route path="/test" exact render={(props) => <Test {...props} />} />
 
+
     </Switch>
+        <Footer /> {/* Add this line to show the footer on every page */}
     </Router>
 );
