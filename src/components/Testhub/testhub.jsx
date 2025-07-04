@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './test.css';
+import './testhub.css';
 
 const resources = [
     { name: 'Selenium Official', url: 'https://www.selenium.dev/' },
