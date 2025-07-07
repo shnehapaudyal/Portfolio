@@ -277,6 +277,47 @@
   background-color: #e5e7eb;
 }
 
+.dropdown-box {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #93126e;
+  font-size: 1rem;
+  margin-bottom:1rem}
+
+input[type="radio"], input[type="checkbox"] {
+  margin-right: 0.3rem;
+}
+
+/* Add this for label text color */
+label {
+  color: #93126e; /* or #333 for a dark, readable gray */
+  font-size: 1rem;
+  cursor: pointer;
+}
+/* Make quiz questions and options readable */
+.quiz-question, .quiz-question label, .quiz-question p {
+  color: #93126e;
+}
+
+.quiz-question p {
+  font-weight: 600;
+}
+.image-cropper {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.image {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+
+
 /* Responsive */
 @media (max-width: 700px) {
     .automation-hub-container {

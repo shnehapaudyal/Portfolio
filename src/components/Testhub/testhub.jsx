@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import './testhub.css';
+import { Link } from 'react-router-dom';
+import Photo from '../../Assets/Bug.png'
+
+
 
 const resources = [
     { name: 'Selenium Official', url: 'https://www.selenium.dev/' },
@@ -17,6 +21,7 @@ const tutorials = [
     { title: 'Playwright for Beginners', url: 'https://playwright.dev/docs/intro' },
     { title: 'API Testing with Postman', url: 'https://learning.postman.com/' },
 ];
+
 
 export default function TestAutomationHub() {
     const [search, setSearch] = useState('');
@@ -87,6 +92,7 @@ export default function TestAutomationHub() {
             setRegForm({ username: '', password: '', email: '', phone: '', address: '' });
             setTimeout(() => setRegSubmitted(false), 3000);
         }
+
 
     };
 
@@ -273,6 +279,191 @@ export default function TestAutomationHub() {
     <li>✅ Get test reports on Slack via webhook</li>
   </ul>
 </section>
+
+<section>
+  <h2>Test Automation Strategy</h2>
+  <ul>
+    <li>📌 Unit Tests: Fast, low-level (Jest, Mocha)</li>
+    <li>🧪 Integration Tests: Test module interaction</li>
+    <li>🌐 UI Tests: Selenium/Playwright for E2E</li>
+    <li>⚙️ Run nightly on Jenkins, reports in Allure</li>
+  </ul>
+</section>
+<section>
+  <h2>Quick Automation Quiz</h2>
+  <p>Q: Which tool is best for mobile automation?</p>
+  <button onClick={() => alert('Correct! ✅')}>Appium</button>
+  <button onClick={() => alert('Try again ❌')}>Cypress</button>
+</section>
+
+<section>
+  <h2>Upload the file</h2>
+  <form onSubmit={(e) => { e.preventDefault(); alert('File uploaded!'); }}>
+    <input type="file" accept=".pdf,.doc,.docx" required />
+    <button type="submit">Upload</button>
+  </form>
+</section>
+
+
+<section>
+  <h2>Selectors</h2>
+  <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}>
+    {/* Radio Buttons */}
+    <div>
+      <label><strong>Non Functional Test:</strong></label><br />
+      <label>
+        <input type="radio" name="radioOption" value="optiona" /> Accesibility Test
+      </label>
+      <label style={{ marginLeft: '1rem' }}>
+        <input type="radio" name="radioOption" value="optionb" /> Performance Test
+      </label>
+      <label style={{ marginLeft: '1rem' }}>
+        <input type="radio" name="radioOption" value="optionc" /> Security Test
+      </label>
+      <label style={{ marginLeft: '1rem' }}>
+        <input type="radio" name="radioOption" value="optiond" /> All of them
+      </label>
+    </div>
+
+    {/* Separator */}
+    <div style={{ borderLeft: '2px solid #e0e0e0', height: '48px' }}></div>
+
+    {/* Checkboxes */}
+    <div>
+      <label><strong>Non Functional Test:</strong></label><br />
+      <label>
+        <input type="checkbox" name="checkOptionA" /> Exploratory Test
+      </label>
+      <label style={{ marginLeft: '1rem' }}>
+        <input type="checkbox" name="checkOptionB" />  A/B Test
+      </label>
+      <label style={{ marginLeft: '1rem' }}>
+        <input type="checkbox" name="checkOptionC" /> Usability test
+      </label>
+    </div>
+
+    {/* Separator */}
+    <div style={{ borderLeft: '2px solid #e0e0e0', height: '48px' }}></div>
+
+    {/* DateTime Picker */}
+    <div>
+      <label htmlFor="datetime"><strong>Date & Time:</strong></label><br />
+      <input type="datetime-local" id="datetime" name="datetime" />
+    </div>
+
+    {/* Separator */}
+    <div style={{ borderLeft: '2px solid #e0e0e0', height: '48px' }}></div>
+
+    {/* Dropdown */}
+    <div>
+      <label htmlFor="selectorDropdown"><strong>Dropdown:</strong></label><br />
+      <select id="selectorDropdown" className="dropdown-box" defaultValue="">
+        <option value="" disabled></option>
+        <option value="option1">Smoke Test</option>
+        <option value="option2">Sanity Test </option>
+        <option value="option3"> Regression test</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Image Navigation</h2>
+  <div className="image-cropper ">
+
+  <Link to="/about">
+    <img src={Photo}
+    //   src="https://via.placeholder.com/180x100?text=About+Me"
+      alt="About Me"
+      className='image'
+    />
+  </Link>
+<img src={Photo} alt="Logo" className="image" />
+</div>
+</section>
+<section>
+  <h2>Quiz: Test Automation</h2>
+  <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+    {/* Question 1 */}
+   <div className="quiz-question" style={{ minWidth: 220 }}>
+      <p>1. What is Test Automation?</p>
+      <div onChange={e => {
+        if (e.target.value === "d") {
+          alert("Correct! ✅\nTest automation is all of the above: automating manual testing, using tools to execute tests, and increasing testing speed.");
+        } else if (e.target.value) {
+          alert("Try again ❌");
+        }
+      }}>
+        <label>
+          <input type="radio" name="quiz1" value="a" /> a) Automating manual testing
+        </label><br />
+        <label>
+          <input type="radio" name="quiz1" value="b" /> b) Using tools to execute tests
+        </label><br />
+        <label>
+          <input type="radio" name="quiz1" value="c" /> c) Increasing testing speed
+        </label><br />
+        <label>
+          <input type="radio" name="quiz1" value="d" /> d) All of the above
+        </label>
+      </div>
+    </div>
+    {/* Separator */}
+    <div style={{ borderLeft: '2px solid #e0e0e0', height: '100px' }}></div>
+    
+    {/* Question 2 */}
+   <div className="quiz-question" style={{ minWidth: 220 }}>
+      <p>2. What is a Test Automation Framework?</p>
+      <div onChange={e => {
+        if (e.target.value === "b") {
+          alert("Correct! ✅\nA test automation framework is a structured approach to organizing tests for maintainability and scalability.");
+        } else if (e.target.value) {
+          alert("Try again ❌");
+        }
+      }}>
+        <label>
+          <input type="radio" name="quiz2" value="a" /> a) A collection of test scripts
+        </label><br />
+        <label>
+          <input type="radio" name="quiz2" value="b" /> b) A structured approach to organizing tests
+        </label><br />
+        <label>
+          <input type="radio" name="quiz2" value="c" /> c) A type of testing tool
+        </label><br />
+        <label>
+          <input type="radio" name="quiz2" value="d" /> d) A way to manage test data
+        </label>
+      </div>
+    </div>
+       {/* Separator */}
+    <div style={{ borderLeft: '2px solid #e0e0e0', height: '100px' }}></div>
+    {/* Question 3 */}
+   <div className="quiz-question" style={{ minWidth: 220 }}>
+      <p>3. What is the purpose of an assertion in test automation?</p>
+      <div onChange={e => {
+        if (e.target.value === "b") {
+          alert("Correct! ✅\nAssertions verify that the actual outcome matches the expected outcome in a test.");
+        } else if (e.target.value) {
+          alert("Try again ❌");
+        }
+      }}>
+        <label>
+          <input type="radio" name="quiz3" value="a" /> a) To define test data
+        </label><br />
+        <label>
+          <input type="radio" name="quiz3" value="b" /> b) To verify expected outcomes
+        </label><br />
+        <label>
+          <input type="radio" name="quiz3" value="c" /> c) To start a test
+        </label><br />
+        <label>
+          <input type="radio" name="quiz3" value="d" /> d) To stop a test
+        </label>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section>
   <h2>Test Execution Report</h2>
   <table className="sample-table">
@@ -297,29 +488,8 @@ export default function TestAutomationHub() {
     </tbody>
   </table>
 </section>
-<section>
-  <h2>Test Automation Strategy</h2>
-  <ul>
-    <li>📌 Unit Tests: Fast, low-level (Jest, Mocha)</li>
-    <li>🧪 Integration Tests: Test module interaction</li>
-    <li>🌐 UI Tests: Selenium/Playwright for E2E</li>
-    <li>⚙️ Run nightly on Jenkins, reports in Allure</li>
-  </ul>
-</section>
-<section>
-  <h2>Quick Automation Quiz</h2>
-  <p>Q: Which tool is best for mobile automation?</p>
-  <button onClick={() => alert('Correct! ✅')}>Appium</button>
-  <button onClick={() => alert('Try again ❌')}>Cypress</button>
-</section>
 
-<section>
-  <h2>Upload the file</h2>
-  <form onSubmit={(e) => { e.preventDefault(); alert('File uploaded!'); }}>
-    <input type="file" accept=".pdf,.doc,.docx" required />
-    <button type="submit">Upload</button>
-  </form>
-</section>
         </div>
     );
+    
 }  

@@ -9,7 +9,7 @@ import About from './components/About/about'
 import Blog from './components/Blogs/blog'
 import Test from './components/Testhub/testhub'
 import Footer from './components/Footer/footer'
-import {firebase as firebaseConfig} from './firebase'
+import {firebase, firebase as firebaseConfig} from './firebase'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -20,10 +20,9 @@ import { getAnalytics } from "firebase/analytics";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-console.log(firebaseConfig, analytics)
+if (process.env.NODE_ENV !== 'development') {
+    initializeApp(firebaseConfig);
+}
 
 export default (
     <Router history={createBrowserHistory()} >
