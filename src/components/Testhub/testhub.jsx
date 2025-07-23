@@ -317,22 +317,17 @@ export default function TestAutomationHub() {
     <button type="submit">Submit Bug</button>
   </form>
 </section>
-<section>
-  <h2>Automation in CI/CD</h2>
-  <ul>
-    <li>🛠 Run Selenium scripts via Jenkins</li>
-    <li>📦 Execute Playwright tests in GitHub Actions</li>
-    <li>✅ Get test reports on Slack via webhook</li>
-  </ul>
-</section>
 
 <section>
   <h2>Test Automation Strategy</h2>
   <ul>
     <li>📌 Unit Tests: Fast, low-level (Jest, Mocha)</li>
     <li>🧪 Integration Tests: Test module interaction</li>
-    <li>🌐 UI Tests: Selenium/Playwright for E2E</li>
+    <li>🌐 UI Tests: Selenium/Cypress/Playwright for E2E</li>
     <li>⚙️ Run nightly on Jenkins, reports in Allure</li>
+    <li>🛠 Run Automated scripts via Jenkins</li>
+    <li>📦 Execute tests in GitHub Actions</li>
+    <li>✅ Get test reports on Slack via webhook</li>
   </ul>
 </section>
 <section>
@@ -426,6 +421,7 @@ export default function TestAutomationHub() {
 <img src={Photo} alt="Logo" className="image" />
 </div>
 </section>
+
 <section>
   <h2>Quiz: Test Automation</h2>
   <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start', flexWrap: 'wrap' }}>
@@ -651,11 +647,9 @@ export default function TestAutomationHub() {
             </tbody>
           </table>
           <p>
-            Use Selenium or Cypress to automate clicking a column header (e.g., "Test Case") and verify the rows are sorted correctly. Check the first row’s content to confirm.
+             Automate clicking a column header and verify the rows are sorted correctly. Check the first row’s content to confirm.
           </p>
         </section>
-
-        
 
         </div>
     );
