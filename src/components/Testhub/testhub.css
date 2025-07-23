@@ -316,7 +316,39 @@ label {
   height: 100%;
   width: auto;
 }
+/* Drag and Drop section visibility fix */
+.drag-drop {
+  background: #fff;
+  color: #222;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
 
+.draggable {
+  background: #e0e0e0;
+  color: #222;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  cursor: grab;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.drop-zone {
+  background: #f5f5f5;
+  color: #222;
+  border: 2px dashed #888;
+  border-radius: 6px;
+  min-height: 60px;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* Responsive */
 @media (max-width: 700px) {

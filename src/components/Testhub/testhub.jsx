@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Photo from '../../Assets/Bug.png'
 
 
-
 const resources = [
     { name: 'Selenium Official', url: 'https://www.selenium.dev/' },
     { name: 'Cypress Docs', url: 'https://docs.cypress.io/' },
@@ -22,28 +21,42 @@ const tutorials = [
     { title: 'API Testing with Postman', url: 'https://learning.postman.com/' },
 ];
 
+const initialReportData = [
+  {
+    testCaseId: 'TC001',
+    testDescription: 'Verify login with valid credentials',
+    status: 'Pass',
+    executionTime: '5s',
+    environment: 'Chrome',
+    defectId: '-',
+    executedBy: 'Selenium',
+    timestamp: '2025-07-23 14:30',
+  },
+  {
+    testCaseId: 'TC002',
+    testDescription: 'Verify search API response',
+    status: 'Fail',
+    executionTime: '8s',
+    environment: 'Firefox',
+    defectId: 'BUG123',
+    executedBy: 'Postman',
+    timestamp: '2025-07-23 14:32',
+  },
+  {
+    testCaseId: 'TC003',
+    testDescription: 'Verify form submission',
+    status: 'Skipped',
+    executionTime: '0s',
+    environment: 'Edge',
+    defectId: '-',
+    executedBy: 'Cypress',
+    timestamp: '2025-07-23 14:35',
+  },
+];
 
 export default function TestAutomationHub() {
     const [search, setSearch] = useState('');
-    // const [form, setForm] = useState({ name: '', url: '', feedback: '' });
-    // const [, setSubmitted] = useState(false);
     const [showPassword, setShowPassword] = useState(false); // 👁️
-
-    const filteredResources = resources.filter(r =>
-        r.name.toLowerCase().includes(search.toLowerCase())
-    );
-
-    // const handleFormChange = e => {
-    //     setForm({ ...form, [e.target.name]: e.target.value });
-    // };
-
-    // const handleFormSubmit = e => {
-    //     e.preventDefault();
-    //     setSubmitted(true);
-    //     setForm({ name: '', url: '', feedback: '' });
-    //     setTimeout(() => setSubmitted(false), 3000);
-    // };
-
     const [regForm, setRegForm] = useState({
         username: '',
         password: '',
@@ -54,9 +67,13 @@ export default function TestAutomationHub() {
 
     const [regErrors, setRegErrors] = useState({});
     const [regSubmitted, setRegSubmitted] = useState(false);
+    const [dragSuccess, setDragSuccess] = useState(false);
 
     const passwordInfo = "Password must be at least 8 characters, include a number, an uppercase letter, and a special character.";
-
+    
+    const filteredResources = resources.filter(r =>
+    r.name.toLowerCase().includes(search.toLowerCase())
+    );
     const validateRegForm = () => {
         const errors = {};
         if (!regForm.username.trim()) errors.username = "Username is required.";
@@ -92,8 +109,74 @@ export default function TestAutomationHub() {
             setRegForm({ username: '', password: '', email: '', phone: '', address: '' });
             setTimeout(() => setRegSubmitted(false), 3000);
         }
+    };
 
+    const handleDragStart = (e) => {
+      e.dataTransfer.setData('text/plain', 'dragged-item');
+      e.target.setAttribute('aria-grabbed', 'true');
+        };
 
+    const handleDragEnd = (e) => {
+        e.target.setAttribute('aria-grabbed', 'false');
+    };
+
+    const handleDragOver = (e) => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+    };
+
+    const handleDrop = (e) => {
+      e.preventDefault();
+      const data = e.dataTransfer.getData('text/plain');
+      if (data === 'dragged-item') {
+        setDragSuccess(true);
+        setTimeout(() => setDragSuccess(false), 3000);
+      }
+    };
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        setDragSuccess(true);
+        setTimeout(() => setDragSuccess(false), 3000);
+      }
+    };
+
+    const [tableData, setTableData] = useState([
+      {
+        testCase: 'Login Functionality',
+        tool: 'Selenium',
+        steps: 'Open URL → Enter credentials → Click Login',
+        expectedResult: 'User is logged in and dashboard appears',
+      },
+      {
+        testCase: 'Search API Status',
+        tool: 'Postman',
+        steps: 'Send GET request to /search',
+        expectedResult: '200 OK with JSON response',
+      },
+      {
+        testCase: 'Form Submission',
+        tool: 'Cypress',
+        steps: 'Fill form → Submit',
+        expectedResult: 'Form submitted successfully',
+      },
+    ]);
+    const [sortColumn, setSortColumn] = useState(null);
+    const [sortDirection, setSortDirection] = useState('asc');
+
+    const handleSort = (column) => {
+      const newDirection = sortColumn === column && sortDirection === 'asc' ? 'desc' : 'asc';
+      const sortedData = [...tableData].sort((a, b) => {
+        const aValue = a[column].toLowerCase();
+        const bValue = b[column].toLowerCase();
+        if (aValue < bValue) return newDirection === 'asc' ? -1 : 1;
+        if (aValue > bValue) return newDirection === 'asc' ? 1 : -1;
+        return 0;
+      });
+      setTableData(sortedData);
+      setSortColumn(column);
+      setSortDirection(newDirection);
     };
 
     return (
@@ -233,33 +316,7 @@ export default function TestAutomationHub() {
                     <button onClick={() => alert('Clicked!')}>With Action</button>
                 </div>
             </section>
-            <section>
-  <h2>Sample Test Cases</h2>
-  <table className="sample-table">
-    <thead>
-      <tr>
-        <th>Test Case</th>
-        <th>Tool</th>
-        <th>Steps</th>
-        <th>Expected Result</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Login Functionality</td>
-        <td>Selenium</td>
-        <td>Open URL → Enter credentials → Click Login</td>
-        <td>User is logged in and dashboard appears</td>
-      </tr>
-      <tr>
-        <td>Search API Status</td>
-        <td>Postman</td>
-        <td>Send GET request to /search</td>
-        <td>200 OK with JSON response</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+           
 <section>
   <h2>Practice Bug Reporting</h2>
   <form className="resource-form" onSubmit={(e) => { e.preventDefault(); alert("Bug submitted!"); }}>
@@ -303,7 +360,6 @@ export default function TestAutomationHub() {
     <button type="submit">Upload</button>
   </form>
 </section>
-
 
 <section>
   <h2>Selectors</h2>
@@ -488,6 +544,129 @@ export default function TestAutomationHub() {
     </tbody>
   </table>
 </section>
+<section>
+          <h2>Drag and Drop</h2>
+          <div className="drag-drop">
+            <div
+              className="draggable"
+              draggable
+              onDragStart={handleDragStart}
+              onDragEnd={handleDragEnd}
+              onKeyDown={handleKeyDown}
+              tabIndex={0}
+              role="button"
+              aria-grabbed="false"
+              aria-label="Drag this item to the drop zone"
+            >
+              Drag Me
+            </div>
+            <div
+              className="drop-zone"
+              onDragOver={handleDragOver}
+              onDrop={handleDrop}
+              onKeyDown={handleKeyDown}
+              tabIndex={0}
+              role="region"
+              aria-dropeffect="move"
+              aria-label="Drop zone for draggable item"
+            >
+              Drop Here
+            </div>
+          </div>
+          {dragSuccess && <div className="form-success">Item dropped successfully!</div>}
+          <p>
+            Use Selenium (Actions class) or Cypress (drag command) to automate dragging the item to the drop zone. Check for the success message.
+          </p>
+        </section>
+
+        <section>
+          <h2>Sortable Data Tables</h2>
+          <table className="sample-table" aria-label="Sortable test cases table">
+            <thead>
+              <tr>
+                <th
+                  scope="col"
+                  onClick={() => handleSort('testCase')}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleSort('testCase');
+                    }
+                  }}
+                  tabIndex={0}
+                  aria-sort={sortColumn === 'testCase' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                  role="button"
+                  aria-label="Sort by Test Case"
+                >
+                  Test Case {sortColumn === 'testCase' && (sortDirection === 'asc' ? '▲' : '▼')}
+                </th>
+                <th
+                  scope="col"
+                  onClick={() => handleSort('tool')}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleSort('tool');
+                    }
+                  }}
+                  tabIndex={0}
+                  aria-sort={sortColumn === 'tool' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                  role="button"
+                  aria-label="Sort by Tool"
+                >
+                  Tool {sortColumn === 'tool' && (sortDirection === 'asc' ? '▲' : '▼')}
+                </th>
+                <th
+                  scope="col"
+                  onClick={() => handleSort('steps')}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleSort('steps');
+                    }
+                  }}
+                  tabIndex={0}
+                  aria-sort={sortColumn === 'steps' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                  role="button"
+                  aria-label="Sort by Steps"
+                >
+                  Steps {sortColumn === 'steps' && (sortDirection === 'asc' ? '▲' : '▼')}
+                </th>
+                <th
+                  scope="col"
+                  onClick={() => handleSort('expectedResult')}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleSort('expectedResult');
+                    }
+                  }}
+                  tabIndex={0}
+                  aria-sort={sortColumn === 'expectedResult' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                  role="button"
+                  aria-label="Sort by Expected Result"
+                >
+                  Expected Result {sortColumn === 'expectedResult' && (sortDirection === 'asc' ? '▲' : '▼')}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {tableData.map((row, index) => (
+                <tr key={index}>
+                  <td>{row.testCase}</td>
+                  <td>{row.tool}</td>
+                  <td>{row.steps}</td>
+                  <td>{row.expectedResult}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p>
+            Use Selenium or Cypress to automate clicking a column header (e.g., "Test Case") and verify the rows are sorted correctly. Check the first row’s content to confirm.
+          </p>
+        </section>
+
+        
 
         </div>
     );
