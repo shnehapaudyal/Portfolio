@@ -226,17 +226,6 @@ export default function TestAutomationHub() {
                 </div>
             </section>
 
-            {/* <section>
-                <h2>Suggest a Resource</h2>
-                <form className="resource-form" onSubmit={handleFormSubmit}>
-                    <input type="text" name="name" placeholder="Resource Name" value={form.name} onChange={handleFormChange} required />
-                    <input type="url" name="url" placeholder="Resource URL" value={form.url} onChange={handleFormChange} required />
-                    <textarea name="feedback" placeholder="Why do you recommend this resource?" value={form.feedback} onChange={handleFormChange} rows={3} />
-                    <button type="submit">Submit</button>
-                    {submitted && <div className="form-success">Thank you for your suggestion!</div>}
-                </form>
-            </section> */}
-
             <section>
                 <h2>User Registration</h2>
                 <form className="resource-form" onSubmit={handleRegSubmit} noValidate>
